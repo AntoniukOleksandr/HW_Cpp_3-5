@@ -1,0 +1,31 @@
+Matrix19. Дана матрица размера M × N. Для каждой строки матрицы найти сумму ее элементов. 
+
+#include <iostream>
+#include <vector>
+using namespace std;
+int main() {
+    int M, N;
+    cout << "введіть розмір матриці M та N: ";
+    cin >> M >> N;
+
+    vector<vector<int>> matrix(M, vector<int>(N));
+
+    cout << "введіть елементи матриці:" <<endl;
+    for (int i = 0; i < M; i++) {
+        for (int j = 0; j < N; j++) {
+            std::cin >> matrix[i][j];
+        }
+    }
+
+    cout << "суми елементів кожного рядка:" << endl;
+    for (int i = 0; i < M; i++) {
+        int rowSum = 0;
+        for (int j = 0; j < N; j++) {
+            rowSum += matrix[i][j];
+        }
+        cout << "cума рядка " << i + 1 << ": " << rowSum <<endl;
+    }
+
+    return 0;
+}
+    
